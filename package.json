@@ -1,16 +1,27 @@
 {
   "name": "intro-express-js-alejandro-matoma",
   "version": "1.0.0",
-  "description": "",
+  "description": "proyecto de introduccion de a express",
+  "keywords": [],
+  "homepage": "https://github.com/matomaalejandro441-web/Intro_express#readme",
+  "bugs": {
+    "url": "https://github.com/matomaalejandro441-web/Intro_express/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matomaalejandro441-web/Intro_express.git"
+  },
+  "license": "ISC",
+  "author": "alejandro",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "dev": "node --watch app.js",
+    "produccion": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }
 }
