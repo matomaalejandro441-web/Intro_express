@@ -1,21 +1,26 @@
 import express from 'express';
 import 'dotenv/config';
+import cors from "cors"
 
 const app = express();
 const puerto = process.env.PORT || 3030;
 
 // Configuración
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 export const saludo = 'Hola, estamos aprendiendo Express con la ficha 3407184';
 
-app.get("/", (_, res) => {
+app.get("/", (req, res) => {
+    req.query.filtro
     res.send(saludo);
 });
 
 app.get("/productos", (req, res) => {
-    res.send(`
+    const orden = req.query.orden || "sin orden"
+    const pagina = req.query.pagina || 1
+    res.send(`<h1>listado de productos ${orden}, en la pagina ${pagina}</h1>
         <h1>Lista de productos</h1>
         <ol>
             <li>Televisor</li>
@@ -58,6 +63,14 @@ app.get("/category/:Category/:id", (req, res) => {
     `);
 });
 
+app.get("/articulos", (req,res)=>{
+    res.json({"nombre" : "alejandro"})
+}
+)
+
+app.get("/aprendices",(req,res) => {
+    res.json({"nombre":"juan"})  
+})
 app.listen(puerto, () => {
     console.log(`Servidor funcionando en el puerto: ${puerto}`);
 });
