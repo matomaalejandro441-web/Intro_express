@@ -9,3 +9,14 @@ app.get("/", (_, res) => {
 app.listen(port, () => {
     console.log(`Servidor en funcionamiento en el puerto: ${port}`);
 });
+
+app.get("/datos_personales",(req,res) =>{
+    res.json({"Datos personales":{"nombre":"alejandro","apellido":"matoma","lista de telefonos":{
+        "sansumg": "4029391230213",
+        "poco":"954912340213"
+    }},
+    "datos programa":{
+        "nombre":"ADSO","tipo de programa":"analisis y desarrollo de sofware","ficha":"3407184"
+    }})
+
+});
