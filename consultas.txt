@@ -1,0 +1,4 @@
+para iniciar el servidor es (node app.js)
+el servidor se encuentra en el puerto http://localhost:3450
+
+para pasar de un commit a otro utilizamos un (git checkout(nombre del commit))
